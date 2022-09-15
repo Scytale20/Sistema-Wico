@@ -1,12 +1,12 @@
 <div class="sidebar" [ngClass]="isClose ? 'sidebar close': 'sidebar'">    
     <ul class="nav-links">       
-        <li [ngClass]="isShow? 'showMenu': ''" >
+        <li [ngClass]="isShow1? 'showMenu': ''" >
             <div class="icon-link">
                 <a href="#">
                     <fa-icon class='bx bx-collection' [icon]="faLayerGroup"></fa-icon>
                     <span class="link-name">Menu</span>
                 </a>
-                <fa-icon class='bx bxs-chevron-down arrow' [icon]="faChevronDown" (click)="showMenu()"></fa-icon> 
+                <fa-icon class='bx bxs-chevron-down arrow' [icon]="faChevronDown" (click)="showMenu1()"></fa-icon> 
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">Menu</a></li>
@@ -15,13 +15,13 @@
                 <li><a href="#">PHP & My SQL</a></li>
             </ul>
         </li>
-        <li [ngClass]="isShow? 'showMenu': ''">
+        <li [ngClass]="isShow2? 'showMenu': ''">
             <div class="icon-link">
                 <a href="#">
                     <fa-icon class='bx bx-book-alt'></fa-icon>
                     <span class="link-name">Post</span>
                 </a>
-                <fa-icon class='bx bxs-chevron-down arrow' [icon]="faChevronDown" (click)="showMenu()"></fa-icon> 
+                <fa-icon class='bx bxs-chevron-down arrow' [icon]="faChevronDown" (click)="showMenu2()"></fa-icon> 
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">Post</a></li>                    
@@ -31,7 +31,7 @@
                 
             </ul>
         </li>
-        <li [ngClass]="isShow? 'showMenu': ''">
+        <li>
             <a href="#">
                 <fa-icon class='bx bx-pie-chart-alt-2'></fa-icon>
                 <span class="link-name">Analytics</span>
@@ -49,13 +49,13 @@
                 <li><a class="link_name" href="#">Chart</a></li>                   
             </ul>
         </li>
-        <li [ngClass]="isShow? 'showMenu': ''">
+        <li [ngClass]="isShow3? 'showMenu': ''">
             <div class="icon-link">
                 <a href="#">
                     <fa-icon class='bx bx-plug'></fa-icon>
                     <span class="link-name">Plugins</span>
                 </a>
-                <fa-icon class='bx bxs-chevron-down arrow' [icon]="faChevronDown" (click)="showMenu()"></fa-icon> 
+                <fa-icon class='bx bxs-chevron-down arrow' [icon]="faChevronDown" (click)="showMenu3()"></fa-icon> 
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">Plugins</a></li>                    
@@ -65,7 +65,7 @@
                 
             </ul>
         </li>
-        <li [ngClass]="isShow? 'showMenu': ''">
+        <li>
             <a href="#">
                 <fa-icon class='bx bx-compass'></fa-icon>
                 <span class="link-name">Explore</span>
@@ -83,7 +83,7 @@
                 <li><a class="link_name" href="#">History</a></li>                   
             </ul>
         </li>
-        <li [ngClass]="isShow? 'showMenu': ''">
+        <li>
             <a href="#">
                 <fa-icon class='bx bx-cog'></fa-icon>
                 <span class="link-name">Setting</span>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faBars, faRightFromBracket, faLayerGroup } from '@fortawesome/free-solid-svg-icons';
 import {faChevronDown} from '@fortawesome/free-solid-svg-icons'
+import { Renderer2 } from '@angular/core'
 
 
 
@@ -16,11 +17,13 @@ export class SideBarComponent implements OnInit {
   faChevronDown = faChevronDown
 
   isClose: boolean = false;
-  isShow: boolean = false;
+  isShow1: boolean = false;
+  isShow2: boolean = false;
+  isShow3: boolean = false;
   
 
 
-  constructor() { }
+  constructor(private render: Renderer2) { }
 
   ngOnInit(): void {
   }
@@ -29,12 +32,14 @@ export class SideBarComponent implements OnInit {
     this.isClose = !this.isClose;
   }
 
-  showMenu(){
-    let arrow = document.getElementsByClassName('arrow')
-    for (var i = 0; i < arrow.length; i++){
-      
-       
-    }
+  showMenu1(){
+    this.isShow1 = !this.isShow1
+  }
+  showMenu2(){
+    this.isShow2 = !this.isShow2
+  }
+  showMenu3(){
+    this.isShow3 = !this.isShow3
   }
 
 }
