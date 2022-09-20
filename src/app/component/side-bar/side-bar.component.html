@@ -10,82 +10,48 @@
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">Menu</a></li>
-                <li><a href="#">HTML & CSS</a></li>
-                <li><a href="#">JavaScript</a></li>
-                <li><a href="#">PHP & My SQL</a></li>
+                <li><a href="#">Menu 1</a></li>
+                <li><a href="#">Menu 2</a></li>
+                <li><a href="#">Menu 3</a></li>
+                <li><a href="#">Menu 4</a></li>
+                <li><a href="#">Menu 5</a></li>
+                <li><a href="#">Menu 6</a></li>
+                <li><a href="#">Menu 7</a></li>
+                <li><a href="#">Menu 8</a></li>
+                <li><a href="#">Menu 9</a></li>
+                <li><a href="#">Menu 10</a></li>
             </ul>
-        </li>
-        <li [ngClass]="isShow2? 'showMenu': ''">
-            <div class="icon-link">
-                <a href="#">
-                    <fa-icon class='bx bx-book-alt'></fa-icon>
-                    <span class="link-name">Post</span>
-                </a>
-                <fa-icon class='bx bxs-chevron-down arrow' [icon]="faChevronDown" (click)="showMenu2()"></fa-icon> 
-            </div>
-            <ul class="sub-menu">
-                <li><a class="link_name" href="#">Post</a></li>                    
-                <li><a href="#">Web Design</a></li>
-                <li><a href="#">Login Form</a></li>
-                <li><a href="#">Card Design</a></li>
-                
-            </ul>
-        </li>
+        </li>        
         <li>
             <a href="#">
-                <fa-icon class='bx bx-pie-chart-alt-2'></fa-icon>
-                <span class="link-name">Analytics</span>
+                <fa-icon class='bx bx-pie-chart-alt-2' [icon]="faBook"></fa-icon>
+                <span class="link-name">Novedades</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">Analytics</a></li>                   
+                <li><a class="link_name" href="#">Novedades</a></li>                   
             </ul>
         </li>
         <li>
             <a href="#">
-                <fa-icon class='bx bx-line-chart'></fa-icon>
-                <span class="link-name">Chart</span>
+                <fa-icon class='bx bx-line-chart' [icon]="faChartSimple"></fa-icon>
+                <span class="link-name">Reporte Generales</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">Chart</a></li>                   
+                <li><a class="link_name" href="#">Reportes Generales</a></li>                   
             </ul>
-        </li>
-        <li [ngClass]="isShow3? 'showMenu': ''">
-            <div class="icon-link">
-                <a href="#">
-                    <fa-icon class='bx bx-plug'></fa-icon>
-                    <span class="link-name">Plugins</span>
-                </a>
-                <fa-icon class='bx bxs-chevron-down arrow' [icon]="faChevronDown" (click)="showMenu3()"></fa-icon> 
-            </div>
-            <ul class="sub-menu">
-                <li><a class="link_name" href="#">Plugins</a></li>                    
-                <li><a href="#">UI Face</a></li>
-                <li><a href="#">Pigments</a></li>
-                <li><a href="#">Box Icons</a></li>
-                
-            </ul>
-        </li>
+        </li>        
         <li>
             <a href="#">
-                <fa-icon class='bx bx-compass'></fa-icon>
-                <span class="link-name">Explore</span>
+                <fa-icon class='bx bx-compass' [icon]="faAddressBook"></fa-icon>
+                <span class="link-name">Datos Personal</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">Explore</a></li>                   
+                <li><a class="link_name" href="#">Datos Personal</a></li>                   
             </ul>
-        </li>
+        </li>        
         <li>
             <a href="#">
-                <fa-icon class='bx bx-history'></fa-icon>
-                <span class="link-name">History</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">History</a></li>                   
-            </ul>
-        </li>
-        <li>
-            <a href="#">
-                <fa-icon class='bx bx-cog'></fa-icon>
+                <fa-icon class='bx bx-cog' [icon]="faGear"></fa-icon>
                 <span class="link-name">Setting</span>
             </a>
             <ul class="sub-menu blank">

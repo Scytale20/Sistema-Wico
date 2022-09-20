@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { faBars, faRightFromBracket, faLayerGroup } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faRightFromBracket, faLayerGroup, faBook, faChartSimple, faAddressBook, faGear } from '@fortawesome/free-solid-svg-icons';
 import {faChevronDown} from '@fortawesome/free-solid-svg-icons'
-import { Renderer2 } from '@angular/core'
+
 
 
 
@@ -15,6 +15,10 @@ export class SideBarComponent implements OnInit {
   logout = faRightFromBracket;
   faLayerGroup = faLayerGroup
   faChevronDown = faChevronDown
+  faBook = faBook
+  faChartSimple = faChartSimple
+  faAddressBook = faAddressBook
+  faGear = faGear
 
   isClose: boolean = false;
   isShow1: boolean = false;
@@ -23,7 +27,7 @@ export class SideBarComponent implements OnInit {
   
 
 
-  constructor(private render: Renderer2) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
