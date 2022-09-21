@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { faBars, faRightFromBracket, faLayerGroup, faBook, faChartSimple, faAddressBook, faGear } from '@fortawesome/free-solid-svg-icons';
 import {faChevronDown} from '@fortawesome/free-solid-svg-icons'
 
@@ -20,7 +20,7 @@ export class SideBarComponent implements OnInit {
   faAddressBook = faAddressBook
   faGear = faGear
 
-  isClose: boolean = false;
+  @Input() isClose: boolean = false;
   isShow1: boolean = false;
   isShow2: boolean = false;
   isShow3: boolean = false;
@@ -29,12 +29,7 @@ export class SideBarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
-  openClose(){
-    this.isClose = !this.isClose;
-  }
+  ngOnInit(): void {  }  
 
   showMenu1(){
     this.isShow1 = !this.isShow1

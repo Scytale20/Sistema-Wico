@@ -1,0 +1,46 @@
+
+
+/* navigation menu Principal*/
+.navbar{
+	position: fixed;
+    top: 0;
+    
+}
+
+.navbar-brand{    
+	padding: 0 0.5rem 0 1rem;
+	
+}
+
+.navbar-brand img{
+	height: 50px;
+}
+
+
+
+.navbar-nav .nav-item .active{
+	padding-left: 5rem;
+}
+
+.nav-item .nav-link{
+	font-family: var(--roboto);
+	text-transform: uppercase;
+	font-weight: 500;
+	
+	
+}
+
+.navbar-light .navbar-nav .nav-link.active{
+	color: var(--primary-color);	
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+	color: var(--primary-color);	
+}
+
+h3{
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+/* end navigation menu Principal*/

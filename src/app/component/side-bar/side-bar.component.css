@@ -213,7 +213,7 @@
     font-size: 12px;
 
 }
-.home-section{
+/* .home-section{
     position: relative;
     background: #e4e9f7;
     height: 100vh;
@@ -241,9 +241,11 @@
 .home-section .home-content .bx-menu{
     margin: 0 28px;
     cursor: pointer;
+    
 }
 .home-section .home-content .text{
     font-size: 26px;
     font-weight: 600;
-}
+} */
+
 

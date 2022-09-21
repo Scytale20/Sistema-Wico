@@ -5,3 +5,17 @@
     font-family: sans-serif;
 
 }
+
+
+/* CSS Variables*/
+
+:root{
+    --primary-color: #0F4578;
+    --box-shadow: 0px 10px 30px rgba(57, 56, 61, 0.205);
+    --shadow-color: 0px 10px 30px rgba(15, 69, 120, 0.3);
+    --linear-gradient: -webkit-linear-gradient(left, rgba(15, 69, 120, 0.45), rgba(15, 69, 12, 0.45));
+
+
+    /*font family variables*/
+    --roboto:'Roboto';
+}

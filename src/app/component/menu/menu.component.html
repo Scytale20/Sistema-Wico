@@ -1,1 +1,17 @@
-<app-side-bar></app-side-bar>
+<section class="home-section">
+  <div class="home-content">
+    <fa-icon
+      data-bs-toggle="tooltip"
+      data-bs-placement="bottom"
+      title="Mostrar Menu"
+      class="bx-menu"
+      [icon]="faBars"
+      (click)="openClose()"
+    ></fa-icon>
+    <app-nav-bar></app-nav-bar>
+  </div>
+  <app-side-bar [isClose]="menuBtn"></app-side-bar>
+</section>
+
+<!-- <app-side-bar></app-side-bar> -->
+<!-- <app-nav-bar></app-nav-bar> -->
