@@ -1,6 +1,14 @@
 <nav class="navbar navbar-expand navbar-light bg-light">
-    <div class="container-fluid d-flex justify-content-start">      
+    <div class="nav container-fluid"> 
+      <fa-icon
+      data-bs-toggle="tooltip"
+      data-bs-placement="bottom"
+      title="Mostrar Menu"
+      class="bx-menu"
+      [icon]="faBars" 
+      (click)="onClick()"     
+    ></fa-icon>     
       <a class="navbar-brand pe-5" href="#"><img src="../../../assets/img/LogoWico.jpg" alt="Logo"></a>          
-      <h3 class="titulocentro ps-5">Titulo</h3>
-      </div>    
+      <h3 class="titulo ps-5">Titulo</h3>
+    </div>    
 </nav>

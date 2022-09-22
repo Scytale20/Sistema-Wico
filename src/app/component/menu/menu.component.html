@@ -1,5 +1,7 @@
-<section class="home-section">
+<!-- <app-nav-bar></app-nav-bar> -->
+<!-- <section class="home-section">  
   <div class="home-content">
+    
     <fa-icon
       data-bs-toggle="tooltip"
       data-bs-placement="bottom"
@@ -8,10 +10,10 @@
       [icon]="faBars"
       (click)="openClose()"
     ></fa-icon>
-    <app-nav-bar></app-nav-bar>
+    
   </div>
   <app-side-bar [isClose]="menuBtn"></app-side-bar>
-</section>
+</section> -->
 
-<!-- <app-side-bar></app-side-bar> -->
-<!-- <app-nav-bar></app-nav-bar> -->
+<app-side-bar [isClose]="menuBtn"></app-side-bar> 
+<app-nav-bar (menuBtn)="openCloseMenu()"></app-nav-bar>

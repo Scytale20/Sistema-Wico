@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  
+  faBars = faBars
+  @Output() menuBtn: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() { }
 
-  openClose(){
+  onClick(){
+    this.menuBtn.emit() 
     
   }
 

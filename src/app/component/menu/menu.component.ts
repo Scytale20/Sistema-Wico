@@ -9,13 +9,14 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 export class MenuComponent implements OnInit {
 
   faBars = faBars
-  menuBtn: boolean = false;
+
+  menuBtn: boolean = true;
 
   constructor() { }
 
-  openClose(){
-    this.menuBtn = !this.menuBtn;
-    console.log(this.menuBtn)
+  openCloseMenu(){
+    this.menuBtn = !this.menuBtn;    
+    
   }
 
   ngOnInit(): void {

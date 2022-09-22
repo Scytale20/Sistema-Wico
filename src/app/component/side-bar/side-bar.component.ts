@@ -20,7 +20,7 @@ export class SideBarComponent implements OnInit {
   faAddressBook = faAddressBook
   faGear = faGear
 
-  @Input() isClose: boolean = false;
+  @Input() isClose: boolean = false; 
   isShow1: boolean = false;
   isShow2: boolean = false;
   isShow3: boolean = false;
