@@ -1,29 +1,29 @@
-<div class="sidebar" [ngClass]="isClose ? 'sidebar close': 'sidebar'">    
+<div class="sidebar" [ngClass]="isOpen ? 'sidebar close': 'sidebar'">    
     <ul class="nav-links">       
         <li [ngClass]="isShow1? 'showMenu': ''" >
             <div class="icon-link">
-                <a href="#">
+                <a [routerLink]="'/Menu'">
                     <fa-icon class='bx bx-collection' [icon]="faLayerGroup"></fa-icon>
                     <span class="link-name">Menu</span>
                 </a>
                 <fa-icon class='bx bxs-chevron-down arrow' [icon]="faChevronDown" (click)="showMenu1()"></fa-icon> 
             </div>
             <ul class="sub-menu">
-                <li><a class="link_name" href="#">Menu</a></li>
-                <li><a href="#">Menu 1</a></li>
-                <li><a href="#">Menu 2</a></li>
-                <li><a href="#">Menu 3</a></li>
-                <li><a href="#">Menu 4</a></li>
-                <li><a href="#">Menu 5</a></li>
-                <li><a href="#">Menu 6</a></li>
-                <li><a href="#">Menu 7</a></li>
-                <li><a href="#">Menu 8</a></li>
-                <li><a href="#">Menu 9</a></li>
-                <li><a href="#">Menu 10</a></li>
+                <li><a class="link_name" [routerLink]="'/Menu'">Menu</a></li>
+                <li><a [routerLink]="'/Menu 1'">Menu 1</a></li>
+                <li><a [routerLink]="'/Menu 2'">Menu 2</a></li>
+                <li><a [routerLink]="'/Menu 3'">Menu 3</a></li>
+                <li><a [routerLink]="'/Menu 4'">Menu 4</a></li>
+                <li><a [routerLink]="'/Menu 5'">Menu 5</a></li>
+                <li><a [routerLink]="'/Menu 6'">Menu 6</a></li>
+                <li><a [routerLink]="'/Menu 7'">Menu 7</a></li>
+                <li><a [routerLink]="'/Menu 8'">Menu 8</a></li>
+                <li><a [routerLink]="'/Menu 9'">Menu 9</a></li>
+                <li><a [routerLink]="'/Menu 10'">Menu 10</a></li>
             </ul>
         </li>        
         <li>
-            <a href="#">
+            <a [routerLink]="'/Novedades'">
                 <fa-icon class='bx bx-pie-chart-alt-2' [icon]="faBook"></fa-icon>
                 <span class="link-name">Novedades</span>
             </a>
@@ -32,7 +32,7 @@
             </ul>
         </li>
         <li>
-            <a href="#">
+            <a [routerLink]="'/Reporte Generales'">
                 <fa-icon class='bx bx-line-chart' [icon]="faChartSimple"></fa-icon>
                 <span class="link-name">Reporte Generales</span>
             </a>
@@ -41,7 +41,7 @@
             </ul>
         </li>        
         <li>
-            <a href="#">
+            <a [routerLink]="'/Datos Personal'">
                 <fa-icon class='bx bx-compass' [icon]="faAddressBook"></fa-icon>
                 <span class="link-name">Datos Personal</span>
             </a>
@@ -50,7 +50,7 @@
             </ul>
         </li>        
         <li>
-            <a href="#">
+            <a [routerLink]="'/Setting'">
                 <fa-icon class='bx bx-cog' [icon]="faGear"></fa-icon>
                 <span class="link-name">Setting</span>
             </a>

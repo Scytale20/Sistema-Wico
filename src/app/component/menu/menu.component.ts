@@ -10,14 +10,11 @@ export class MenuComponent implements OnInit {
 
   faBars = faBars
 
-  menuBtn: boolean = true;
+  
 
   constructor() { }
 
-  openCloseMenu(){
-    this.menuBtn = !this.menuBtn;    
-    
-  }
+ 
 
   ngOnInit(): void {
   }

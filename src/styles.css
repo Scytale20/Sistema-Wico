@@ -2,15 +2,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: sans-serif;    
 
 }
+
 
 
 /* CSS Variables*/
 
 :root{
     --primary-color: #0F4578;
+    --secondary-color: #45b4ad;
     --box-shadow: 0px 10px 30px rgba(57, 56, 61, 0.205);
     --shadow-color: 0px 10px 30px rgba(15, 69, 120, 0.3);
     --linear-gradient: -webkit-linear-gradient(left, rgba(15, 69, 120, 0.45), rgba(15, 69, 12, 0.45));

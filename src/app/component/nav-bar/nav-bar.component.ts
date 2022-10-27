@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
+import { SideBarService } from 'src/app/service/side-bar.service'
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -9,12 +10,12 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 export class NavBarComponent implements OnInit {
 
   faBars = faBars
-  @Output() menuBtn: EventEmitter<boolean> = new EventEmitter<boolean>();
+  
 
-  constructor() { }
+  constructor(private sideBarService: SideBarService) { }
 
   onClick(){
-    this.menuBtn.emit() 
+     this.sideBarService.openclose()
     
   }
 
