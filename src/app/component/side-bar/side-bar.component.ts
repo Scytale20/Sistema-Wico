@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { faBars, faRightFromBracket, faLayerGroup } from '@fortawesome/free-solid-svg-icons';
+import { Component, OnInit, Input } from '@angular/core';
+import { faBars, faRightFromBracket, faLayerGroup, faBook, faChartSimple, faAddressBook, faGear } from '@fortawesome/free-solid-svg-icons';
 import {faChevronDown} from '@fortawesome/free-solid-svg-icons'
+import { SideBarService } from 'src/app/service/side-bar.service';
+
 
 
 
@@ -10,31 +12,44 @@ import {faChevronDown} from '@fortawesome/free-solid-svg-icons'
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
+  
+  /* FontAwesome Icons*/
   faBars = faBars;
   logout = faRightFromBracket;
   faLayerGroup = faLayerGroup
   faChevronDown = faChevronDown
+  faBook = faBook
+  faChartSimple = faChartSimple
+  faAddressBook = faAddressBook
+  faGear = faGear
 
-  isClose: boolean = false;
-  isShow: boolean = false;
+  /*data inout*/
+  isOpen: boolean = true; 
+  
+  
+  isShow1: boolean = false;
+  isShow2: boolean = false;
+  isShow3: boolean = false;
   
 
 
-  constructor() { }
+  constructor(private sideBarService: SideBarService) { }
 
   ngOnInit(): void {
-  }
+    this.sideBarService.change.subscribe((isOpen) => {
+      this.isOpen = isOpen;
+    })
+    
+    }  
 
-  openClose(){
-    this.isClose = !this.isClose;
+  showMenu1(){
+    this.isShow1 = !this.isShow1
   }
-
-  showMenu(){
-    let arrow = document.getElementsByClassName('arrow')
-    for (var i = 0; i < arrow.length; i++){
-      
-       
-    }
+  showMenu2(){
+    this.isShow2 = !this.isShow2
+  }
+  showMenu3(){
+    this.isShow3 = !this.isShow3
   }
 
 }

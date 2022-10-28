@@ -1,0 +1,37 @@
+.home-section{
+    position: relative;
+    background: #b2c2f0;
+    height: 100vh;
+    top: 70px;
+    left: 260px;       
+    width: calc(100% - 260px);    
+    transition: all 0.7s ease;        
+}
+
+.sidebar.close{
+    left: 78px;
+    width: calc(100% - 78px);
+}
+.home-section .home-content{    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+/* .home-section .home-content .bx-menu,
+.home-section .home-content .text{
+    color: #0F4578;
+    font-size: 22px;
+    
+}
+.home-section .home-content .bx-menu{
+    margin: 0 28px;
+    cursor: pointer;
+    
+}
+.home-section .home-content .text{
+    font-size: 26px;
+    font-weight: 600;
+} */

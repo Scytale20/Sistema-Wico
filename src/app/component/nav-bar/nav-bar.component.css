@@ -1,0 +1,67 @@
+
+
+/* navigation menu Principal*/
+.navbar{
+		
+	max-height: 70px;	
+	z-index: 200;
+	
+}
+
+.navbar .nav{
+	display: flex;
+	justify-content: flex-start;
+}
+
+.navbar .nav .bx-menu{
+	color: #0F4578;
+    font-size: 22px;
+	margin: 0 50px 0 28px;
+    cursor: pointer;
+}
+
+.navbar .nav .bx-menu:hover{
+	color: var(--secondary-color);
+}
+.navbar-brand{    
+	padding: 0 0.5rem 0 0.3rem;
+	
+}
+
+.navbar-brand img{
+	height: 50px;
+}
+
+.navbar .nav h3{
+    color: var(--primary-color);
+    text-transform: uppercase;
+	margin-bottom: 0;
+	font-size: 28px;
+}
+
+
+
+/* .navbar-nav .nav-item .active{
+	padding-left: 5rem;
+}
+
+.nav-item .nav-link{
+	font-family: var(--roboto);
+	text-transform: uppercase;
+	font-weight: 500;
+	
+	
+}
+
+.navbar-light .navbar-nav .nav-link.active{
+	color: var(--primary-color);	
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+	color: var(--primary-color);	
+} */
+
+
+
+
+/* end navigation menu Principal*/

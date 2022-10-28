@@ -1,91 +1,57 @@
-<div class="sidebar" [ngClass]="isClose ? 'sidebar close': 'sidebar'">    
+<div class="sidebar" [ngClass]="isOpen ? 'sidebar close': 'sidebar'">    
     <ul class="nav-links">       
-        <li [ngClass]="isShow? 'showMenu': ''" >
+        <li [ngClass]="isShow1? 'showMenu': ''" >
             <div class="icon-link">
-                <a href="#">
+                <a [routerLink]="'/Menu'">
                     <fa-icon class='bx bx-collection' [icon]="faLayerGroup"></fa-icon>
                     <span class="link-name">Menu</span>
                 </a>
-                <fa-icon class='bx bxs-chevron-down arrow' [icon]="faChevronDown" (click)="showMenu()"></fa-icon> 
+                <fa-icon class='bx bxs-chevron-down arrow' [icon]="faChevronDown" (click)="showMenu1()"></fa-icon> 
             </div>
             <ul class="sub-menu">
-                <li><a class="link_name" href="#">Menu</a></li>
-                <li><a href="#">HTML & CSS</a></li>
-                <li><a href="#">JavaScript</a></li>
-                <li><a href="#">PHP & My SQL</a></li>
+                <li><a class="link_name" [routerLink]="'/Menu'">Menu</a></li>
+                <li><a [routerLink]="'/Menu 1'">Menu 1</a></li>
+                <li><a [routerLink]="'/Menu 2'">Menu 2</a></li>
+                <li><a [routerLink]="'/Menu 3'">Menu 3</a></li>
+                <li><a [routerLink]="'/Menu 4'">Menu 4</a></li>
+                <li><a [routerLink]="'/Menu 5'">Menu 5</a></li>
+                <li><a [routerLink]="'/Menu 6'">Menu 6</a></li>
+                <li><a [routerLink]="'/Menu 7'">Menu 7</a></li>
+                <li><a [routerLink]="'/Menu 8'">Menu 8</a></li>
+                <li><a [routerLink]="'/Menu 9'">Menu 9</a></li>
+                <li><a [routerLink]="'/Menu 10'">Menu 10</a></li>
             </ul>
-        </li>
-        <li [ngClass]="isShow? 'showMenu': ''">
-            <div class="icon-link">
-                <a href="#">
-                    <fa-icon class='bx bx-book-alt'></fa-icon>
-                    <span class="link-name">Post</span>
-                </a>
-                <fa-icon class='bx bxs-chevron-down arrow' [icon]="faChevronDown" (click)="showMenu()"></fa-icon> 
-            </div>
-            <ul class="sub-menu">
-                <li><a class="link_name" href="#">Post</a></li>                    
-                <li><a href="#">Web Design</a></li>
-                <li><a href="#">Login Form</a></li>
-                <li><a href="#">Card Design</a></li>
-                
-            </ul>
-        </li>
-        <li [ngClass]="isShow? 'showMenu': ''">
-            <a href="#">
-                <fa-icon class='bx bx-pie-chart-alt-2'></fa-icon>
-                <span class="link-name">Analytics</span>
+        </li>        
+        <li>
+            <a [routerLink]="'/Novedades'">
+                <fa-icon class='bx bx-pie-chart-alt-2' [icon]="faBook"></fa-icon>
+                <span class="link-name">Novedades</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">Analytics</a></li>                   
+                <li><a class="link_name" href="#">Novedades</a></li>                   
             </ul>
         </li>
         <li>
-            <a href="#">
-                <fa-icon class='bx bx-line-chart'></fa-icon>
-                <span class="link-name">Chart</span>
+            <a [routerLink]="'/Reporte Generales'">
+                <fa-icon class='bx bx-line-chart' [icon]="faChartSimple"></fa-icon>
+                <span class="link-name">Reporte Generales</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">Chart</a></li>                   
+                <li><a class="link_name" href="#">Reportes Generales</a></li>                   
             </ul>
-        </li>
-        <li [ngClass]="isShow? 'showMenu': ''">
-            <div class="icon-link">
-                <a href="#">
-                    <fa-icon class='bx bx-plug'></fa-icon>
-                    <span class="link-name">Plugins</span>
-                </a>
-                <fa-icon class='bx bxs-chevron-down arrow' [icon]="faChevronDown" (click)="showMenu()"></fa-icon> 
-            </div>
-            <ul class="sub-menu">
-                <li><a class="link_name" href="#">Plugins</a></li>                    
-                <li><a href="#">UI Face</a></li>
-                <li><a href="#">Pigments</a></li>
-                <li><a href="#">Box Icons</a></li>
-                
-            </ul>
-        </li>
-        <li [ngClass]="isShow? 'showMenu': ''">
-            <a href="#">
-                <fa-icon class='bx bx-compass'></fa-icon>
-                <span class="link-name">Explore</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">Explore</a></li>                   
-            </ul>
-        </li>
+        </li>        
         <li>
-            <a href="#">
-                <fa-icon class='bx bx-history'></fa-icon>
-                <span class="link-name">History</span>
+            <a [routerLink]="'/Datos Personal'">
+                <fa-icon class='bx bx-compass' [icon]="faAddressBook"></fa-icon>
+                <span class="link-name">Datos Personal</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">History</a></li>                   
+                <li><a class="link_name" href="#">Datos Personal</a></li>                   
             </ul>
-        </li>
-        <li [ngClass]="isShow? 'showMenu': ''">
-            <a href="#">
-                <fa-icon class='bx bx-cog'></fa-icon>
+        </li>        
+        <li>
+            <a [routerLink]="'/Setting'">
+                <fa-icon class='bx bx-cog' [icon]="faGear"></fa-icon>
                 <span class="link-name">Setting</span>
             </a>
             <ul class="sub-menu blank">
@@ -106,8 +72,5 @@
         </li>
     </ul>
 </div>
-<section class="home-section">
-    <div class="home-content">
-        <fa-icon  class="bx-menu" [icon]="faBars" (click)="openClose()"></fa-icon>            
-    </div>
-</section>
+
+
