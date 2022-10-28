@@ -1,0 +1,24 @@
+table{
+	box-shadow: var(--box-shadow);
+	
+}
+
+.celdastitulo {
+   font:15px var(--roboto);
+   color: white;   
+   background: var(--primary-color);
+   
+}
+
+.celdasclaras {
+   font:12px Verdana, Arial, Helvetica;
+   color: black;
+   text-align:left;
+   
+}
+
+.btn-table{
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+}

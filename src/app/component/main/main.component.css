@@ -1,6 +1,5 @@
 .home-section{
-    position: relative;
-    background: #b2c2f0;
+    position: relative;    
     height: 100vh;
     top: 70px;
     left: 260px;       
@@ -13,10 +12,7 @@
     width: calc(100% - 78px);
 }
 .home-section .home-content{    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+    margin-top: 40px;
     
 }
 

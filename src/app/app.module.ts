@@ -9,6 +9,8 @@ import { SideBarComponent } from './component/side-bar/side-bar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 import { MainComponent } from './component/main/main.component';
+import { EntradasComponent } from './component/entradas/entradas.component';
+
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { MainComponent } from './component/main/main.component';
     MenuComponent,
     SideBarComponent,
     NavBarComponent,
-    MainComponent
+    MainComponent,
+    EntradasComponent
+    
   ],
   imports: [
     BrowserModule,
