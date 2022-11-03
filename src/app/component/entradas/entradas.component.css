@@ -17,13 +17,23 @@ table{
    
 }
 
-.btn{
-	width: 40px;
-	height: 20px;
-   font: 12px var(--roboto);
-	
-}
 
-.badge{
+
+td button mat-icon{     
+   color: #0F4578; 
+   font-size: 22px;
+   margin: 3px 0px 0px 5px;      
+   transition: all 0.3s ease;   	
    
 }
+
+td button mat-icon:hover{
+   color: var(--secondary-color);
+}
+
+td button.actions{   
+   border: none;
+   background: none;
+
+}
+

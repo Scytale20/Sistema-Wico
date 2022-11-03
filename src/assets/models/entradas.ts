@@ -11,6 +11,8 @@ export interface Ientradas{
     neto: number;
     remito:number;
     densidad_15: number;
+    descargado: number;
+    estado: string;
 
 
 }

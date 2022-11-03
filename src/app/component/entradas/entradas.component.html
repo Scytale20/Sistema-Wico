@@ -1,3 +1,208 @@
+<!-- Button trigger modal -->
+<button
+  type="button"
+  class="btn btn-success"
+  data-bs-toggle="modal"
+  data-bs-target="#modalEntradas"
+>
+  Nueva Entrada
+</button>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="modalEntradas"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Nueva Entrada</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="entradasForm" (ngSubmit)="onSubmit()">
+          <input type="hidden" name="id" formControlName="id" />
+
+          <div class="">
+            <label for="fecha" class=""
+              >Fecha</label>
+            <div class="">
+              <input
+                type="date"
+                name="fecha"
+                formControlName="fecha"
+                class="form-control"                
+              />
+            </div>
+          </div>
+          <div class="">
+            <label for="fecha_remito" class=""
+              >Fecha Remito</label>
+            <div class="">
+              <input
+                type="date"
+                name="fecha_remito"
+                formControlName="fecha_remito"
+                class="form-control"                
+              />
+            </div>
+          </div>
+          <div class="">
+            <label for="yacimiento" class=""
+              >Yacimiento</label>
+            <div class="">
+              <input
+                type="text"
+                name="yacimiento"
+                formControlName="yacimiento"
+                class="form-control"                
+              />
+            </div>
+          </div>
+          
+          <div class="">
+            <label for="producto" class=""
+              >Producto</label>
+            <div class="">
+              <input
+                type="text"
+                name="producto"
+                formControlName="producto"
+                class="form-control"                
+              />
+            </div>
+          </div>
+
+          <div class="">
+            <label for="proveedor" class=""
+              >Proveedor</label>
+            <div class="">
+              <input
+                type="text"
+                name="proveedor"
+                formControlName="proveedor"
+                class="form-control"                
+              />
+            </div>
+          </div>
+
+          <div class="">
+            <label for="nominal" class=""
+              >Nominal</label>
+            <div class="">
+              <input
+                type="number"
+                name="nominal"
+                formControlName="nominal"
+                class="form-control"                
+              />
+            </div>
+          </div>
+
+          <div class="">
+            <label for="bruto" class=""
+              >Bruto</label>
+            <div class="">
+              <input
+                type="number"
+                name="bruto"
+                formControlName="bruto"
+                class="form-control"                
+              />
+            </div>
+          </div>
+
+          <div class="">
+            <label for="tara" class=""
+              >Tara</label>
+            <div class="">
+              <input
+                type="number"
+                name="tara"
+                formControlName="tara"
+                class="form-control"                
+              />
+            </div>
+          </div>
+          
+          <div class="">
+            <label for="remito" class=""
+              >Remito</label>
+            <div class="">
+              <input
+                type="number"
+                name="remito"
+                formControlName="remito"
+                class="form-control"                
+              />
+            </div>
+          </div>
+
+          <div class="">
+            <label for="densidad_15" class=""
+              >Densidad_15</label>
+            <div class="">
+              <input
+                type="number"
+                name="densidad_15"
+                formControlName="densidad_15"
+                class="form-control"                
+              />
+            </div>
+          </div>
+
+          <div class="">
+            <label for="descargado" class=""
+              >Descargado</label>
+            <div class="">
+              <input
+                type="number"
+                name="descargado"
+                formControlName="descargado"
+                class="form-control"                
+              />
+            </div>
+          </div>
+
+          <div class="">
+            <label for="estado" class=""
+              >Estado</label>
+            <div class="">
+              <input
+                type="text"
+                name="estado"
+                formControlName="estado"
+                class="form-control"                
+              />
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button type="submit" class="btn btn-primary">Subir</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="table-responsive-lg text-nowrap">
   <table class="table align-middle w-auto table-light table-hover caption-top">
     <caption>
@@ -24,14 +229,13 @@
         <th scope="col" class="celdastitulo">Lts Remito</th>
         <th scope="col" class="celdastitulo">Lts Peso</th>
         <th scope="col" class="celdastitulo">Descargado</th>
-        <th scope="col" class="celdastitulo">Peso Neto</th>
         <th scope="col" class="celdastitulo">Fecha Remito</th>
         <th scope="col" class="celdastitulo">Proveedor</th>
         <th scope="col" class="celdastitulo">Estado</th>
-        <th scope="col" class="celdastitulo">Actions</th>
+        <th scope="col" class="celdastitulo" *ngIf="btnActive">Actions</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody *ngFor="let entrada of entradas">
       <tr>
         <th scope="row">
           <div class="form-check">
@@ -43,25 +247,54 @@
             />
           </div>
         </th>
-        <th scope="row" class="celdasclaras">4333</th>
-        <td class="celdasclaras">28-10-2022</td>
-        <td class="celdasclaras">15223</td>
-        <td class="celdasclaras">Rincon de las Cenizas</td>
-        <td class="celdasclaras">Crudo</td>
-        <td class="celdasclaras">26600</td>
-        <td class="celdasclaras">35390</td>
-        <td class="celdasclaras">35372.34</td>
-        <td class="celdasclaras">34832.75</td>
-        <td class="celdasclaras">26600</td>
-        <td class="celdasclaras">26-10-2022</td>
-        <td class="celdasclaras">Total Austral S.A.</td>
-        <td><span class="badge bg-success">Terminado</span></td>
+        <th scope="row" class="celdasclaras">{{ entrada.id }}</th>
+        <td class="celdasclaras">{{ entrada.fecha | date: "d/M/yy, h:mm" }}</td>
+        <td class="celdasclaras">{{ entrada.remito }}</td>
+        <td class="celdasclaras">{{ entrada.yacimiento }}</td>
+        <td class="celdasclaras">{{ entrada.producto }}</td>
+        <td class="celdasclaras">{{ entrada.bruto - entrada.tara | number: "1.2-2":"it" }}</td>
         <td class="celdasclaras">
-          <button class="btn btn-link btn-sm btn-rounded">Ver</button>
-          <button class="btn btn-link btn-sm btn-rounded">Editar</button>
-          <button class="btn btn-link btn-sm btn-rounded">Borrar</button>
+          {{ entrada.nominal | number: "1.2-2":"it" }}
+        </td>
+        <td class="celdasclaras">
+          {{ entrada.neto / entrada.densidad_15 | number: "1.2-2":"it" }}
+        </td>
+        <td class="celdasclaras">
+          {{ entrada.descargado | number: "1.2-2":"it" }}
+        </td>
+        <td class="celdasclaras">
+          {{ entrada.fecha_remito | date: "d/M/yy, h:mm" }}
+        </td>
+        <td class="celdasclaras">{{ entrada.proveedor }}</td>
+        <td>
+          <span class="badge bg-success">{{ entrada.estado }}</span>
+        </td>
+        <td class="celdasclaras" *ngIf="btnActive">
+          <button class="actions">
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="search"
+            ></mat-icon>
+          </button>
+          <button class="actions">
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="edit"
+            ></mat-icon>
+          </button>
+          <button class="actions">
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="delete"
+              style="color: red"
+            ></mat-icon>
+          </button>
         </td>
       </tr>
     </tbody>
   </table>
+  <hr />
 </div>
