@@ -14,6 +14,10 @@ export class EntradasService {
   constructor(private http:HttpClient) { }
 
   nuevaEntrada(entrada: Ientradas): Observable<any>{
-    return this.http.post<any>(datosUrl.baseUrl + 'entradas.json', entrada)
+    return this.http.post<any>(datosUrl.baseUrl + 'entradas.json', entrada);
+  }
+
+  mostrarEntrada():Observable<any>{
+    return this.http.get(datosUrl.baseUrl + 'entradas.json');
   }
 }

@@ -16,7 +16,7 @@
 .navbar .nav .bx-menu{
 	color: #0F4578;
     font-size: 22px;
-	margin: 0 50px 0 28px;
+	margin: 14px 50px 0 28px;
     cursor: pointer;
 }
 
@@ -24,7 +24,7 @@
 	color: var(--secondary-color);
 }
 .navbar-brand{    
-	padding: 0 0.5rem 0 0.3rem;
+	padding: 0 0px 0 0px;
 	
 }
 

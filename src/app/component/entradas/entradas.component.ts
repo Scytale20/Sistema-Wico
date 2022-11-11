@@ -47,6 +47,7 @@ export class EntradasComponent implements OnInit {
   	
   
   ngOnInit(): void {
+    this.getEntradas()
   }
 
   onSubmit(){
@@ -57,6 +58,12 @@ export class EntradasComponent implements OnInit {
     
     // this.entradasForm.reset()
     
+  }
+
+  private getEntradas(){
+    this.entradaService.mostrarEntrada().subscribe((res) => { 
+      console.log(res);
+    })
   }
 
 }
