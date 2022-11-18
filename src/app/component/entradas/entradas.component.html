@@ -186,6 +186,16 @@
             </div>
           </div>
 
+            <div class="">
+              <input
+                type="hidden"
+                name="checkbox"
+                formControlName="checkbox"
+                class="form-control"                               
+              />
+            </div>
+          
+
           <div class="modal-footer">
             <button
               type="button"
@@ -215,7 +225,7 @@
               class="form-check-input"
               type="checkbox"
               value=""
-              id="flexCheckDefault"
+              id="flexCheckDefault"              
             />
           </div>
         </th>
@@ -231,22 +241,27 @@
         <th scope="col" class="celdastitulo">Fecha Remito</th>
         <th scope="col" class="celdastitulo">Proveedor</th>
         <th scope="col" class="celdastitulo">Estado</th>
-        <th scope="col" class="celdastitulo" *ngIf="btnActive">Actions</th>
+        <th scope="col" class="celdastitulo">Ver</th>
+        <th scope="col" class="celdastitulo" *ngIf="btnEditar">Editar</th>
+        <th scope="col" class="celdastitulo" *ngIf="btnDelete">Delete</th>
       </tr>
     </thead>
-    <tbody *ngFor="let entrada of entradas">
+    <tbody *ngFor="let entrada of allEntradas, index as i">
       <tr>
         <th scope="row">
           <div class="form-check">
             <input
               class="form-check-input"
-              type="checkbox"
-              value=""
+              type="checkbox"              
               id="flexCheckDefault"
+              [value]="entrada.id"              
+              [checked]="entrada.checkbox"
+              (change)="checkboxChanged($event)"
+              *ngIf="btnCheckbox"
             />
           </div>
         </th>
-        <th scope="row" class="celdasclaras">{{ entrada.id }}</th>
+        <th scope="row" class="celdasclaras">{{ i + 1 }}</th>
         <td class="celdasclaras">{{ entrada.fecha | date: "d/M/yy, h:mm" }}</td>
         <td class="celdasclaras">{{ entrada.remito }}</td>
         <td class="celdasclaras">{{ entrada.yacimiento }}</td>
@@ -268,7 +283,7 @@
         <td>
           <span class="badge bg-success">{{ entrada.estado }}</span>
         </td>
-        <td class="celdasclaras" *ngIf="btnActive">
+        <td class="celdasclaras">
           <button class="actions">
             <mat-icon
               aria-hidden="false"
@@ -276,22 +291,27 @@
               fontIcon="search"
             ></mat-icon>
           </button>
-          <button class="actions">
-            <mat-icon
-              aria-hidden="false"
-              aria-label="Example home icon"
-              fontIcon="edit"
-            ></mat-icon>
-          </button>
-          <button class="actions">
-            <mat-icon
-              aria-hidden="false"
-              aria-label="Example home icon"
-              fontIcon="delete"
-              style="color: red"
-            ></mat-icon>
-          </button>
         </td>
+          <td class="celdasclaras" *ngIf="entrada.checkbox">
+            <button class="actions">
+              <mat-icon
+                aria-hidden="false"
+                aria-label="Example home icon"
+                fontIcon="edit"
+              ></mat-icon>
+            </button>
+          </td>
+          <td class="celdasclaras" *ngIf="btnDelete">
+            <button class="actions">
+              <mat-icon
+                aria-hidden="false"
+                aria-label="Example home icon"
+                fontIcon="delete"
+                style="color: red"
+              ></mat-icon>
+            </button>
+          </td>
+        
       </tr>
     </tbody>
   </table>

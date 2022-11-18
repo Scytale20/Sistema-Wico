@@ -13,15 +13,11 @@ export class EntradasComponent implements OnInit {
 
   
   entradasForm: FormGroup;
-  btnActive: boolean = true;
+  btnEditar: boolean = false;
+  btnDelete: boolean = false;
+  btnCheckbox: boolean = true;
   
-  entradas: Ientradas[] = [
-    {id: 4333, fecha: new Date('2022/10/28'), fecha_remito: new Date('2022/10/28'), yacimiento: 'Rincon de las Cenizas', producto: 'Crudo', proveedor: 'Total Austral S.A.', nominal: 35000, bruto: 43500, tara: 13200, neto: 30300, descargado: 34750, remito: 15223, densidad_15: 0.755, estado: 'terminado'},
-    {id: 4334, fecha: new Date('2022/10/28'), fecha_remito: new Date('2022/10/28'), yacimiento: 'Rincon de las Cenizas', producto: 'Crudo', proveedor: 'Total Austral S.A.', nominal: 35000, bruto: 43500, tara: 13200, neto: 30300, descargado: 34750, remito: 15223, densidad_15: 0.755, estado: 'terminado'},
-    {id: 4335, fecha: new Date('2022/10/28'), fecha_remito: new Date('2022/10/28'), yacimiento: 'Rincon de las Cenizas', producto: 'Crudo', proveedor: 'Total Austral S.A.', nominal: 35000, bruto: 43500, tara: 13200, neto: 30300, descargado: 34750, remito: 15223, densidad_15: 0.755, estado: 'terminado'},
-    {id: 4336, fecha: new Date('2022/10/28'), fecha_remito: new Date('2022/10/28'), yacimiento: 'Rincon de las Cenizas', producto: 'Crudo', proveedor: 'Total Austral S.A.', nominal: 35000, bruto: 43500, tara: 13200, neto: 30300, descargado: 34750, remito: 15223, densidad_15: 0.755, estado: 'terminado'},
-    {id: 4337, fecha: new Date('2022/10/28'), fecha_remito: new Date('2022/10/28'), yacimiento: 'Rincon de las Cenizas', producto: 'Crudo', proveedor: 'Total Austral S.A.', nominal: 35000, bruto: 43500, tara: 13200, neto: 30300, descargado: 34750, remito: 15223, densidad_15: 0.755, estado: 'terminado'},
-  ]
+  allEntradas: Ientradas[] = []
 
   constructor(private formBuilder: FormBuilder, private entradaService: EntradasService) {
 
@@ -39,7 +35,8 @@ export class EntradasComponent implements OnInit {
       remito:[''],
       densidad_15:[''],
       descargado:[''],
-      estado:['']
+      estado:[''], 
+      checkbox:[false]
     })
    }
 
@@ -52,18 +49,38 @@ export class EntradasComponent implements OnInit {
 
   onSubmit(){
     let entrada: Ientradas = this.entradasForm.value
-    this.entradaService.nuevaEntrada(entrada).subscribe((res) => {
-      console.log(res)
-    })
-    
-    // this.entradasForm.reset()
-    
+    this.entradaService.nuevaEntrada(entrada)    
+    .subscribe(() => {
+      this.getEntradas()
+
+    })    
+    this.entradasForm.reset()    
   }
+
 
   private getEntradas(){
-    this.entradaService.mostrarEntrada().subscribe((res) => { 
-      console.log(res);
+    this.entradaService.mostrarEntrada().subscribe((entradas) => {       
+      this.allEntradas = entradas;
     })
   }
 
+  // Metodo para las checkbox
+  checkboxChanged($event) {
+    const id = $event.target.value;
+    const isChecked = $event.target.checked;   
+
+     const checkedMap = this.allEntradas.map((value) => {
+       if(value.id == id) {
+         value.checkbox = isChecked;         
+       }return value          
+     })
+     const check = checkedMap.some((x) => {
+      if(x.checkbox === true){
+        return true;
+      }else{
+        return false;
+      }
+     })
+     this.btnEditar = check;         
+  }
 }

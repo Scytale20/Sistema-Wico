@@ -1,5 +1,5 @@
 export interface Ientradas{
-    id: number;
+    id?: string;
     fecha: Date;
     fecha_remito: Date;
     yacimiento: string;
@@ -13,6 +13,7 @@ export interface Ientradas{
     densidad_15: number;
     descargado: number;
     estado: string;
+    checkbox: boolean;
 
 
 }
