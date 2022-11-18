@@ -4,6 +4,7 @@ import { EntradasService } from 'src/app/service/entradas.service';
 import { Ientradas } from 'src/assets/models/entradas';
 
 
+
 @Component({
   selector: 'app-entradas',
   templateUrl: './entradas.component.html',
@@ -16,6 +17,7 @@ export class EntradasComponent implements OnInit {
   btnEditar: boolean = false;
   btnDelete: boolean = false;
   btnCheckbox: boolean = true;
+  allCheckbox: boolean = false;
   
   allEntradas: Ientradas[] = []
 
@@ -71,9 +73,16 @@ export class EntradasComponent implements OnInit {
 
      const checkedMap = this.allEntradas.map((value) => {
        if(value.id == id) {
-         value.checkbox = isChecked;         
-       }return value          
-     })
+         value.checkbox = isChecked;
+         this.allCheckbox = false;         
+         return value 
+       }
+       if(id == -1){
+        value.checkbox = this.allCheckbox
+        return value 
+      }
+       return value          
+     })     
      const check = checkedMap.some((x) => {
       if(x.checkbox === true){
         return true;
